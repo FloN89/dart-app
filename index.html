@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Steeldart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+  <div class="brand">
+    <div class="title">Redneck Steeldart</div>
+  </div>
+
+  <div class="controls">
+    <div class="pill">
+      <label for="modeSel">Start</label>
+      <select id="modeSel">
+        <option value="301">301</option>
+        <option value="501" selected>501</option>
+      </select>
+    </div>
+
+    <div class="pill">
+      <label for="doubleOut">Double-Out</label>
+      <input type="checkbox" id="doubleOut" checked>
+    </div>
+
+    <button class="btn secondary" id="newGameBtn">Neues Spiel</button>
+  </div>
+</div>
+
+
+    <div class="grid">
+      <!-- Spieler -->
+      <div class="card">
+        <div class="head">
+          <h2>Spieler</h2>
+          <span id="playerCount">0 / 20</span>
+        </div>
+
+        <div class="players" id="players"></div>
+
+        <div class="players">
+          <div class="addRow">
+            <input id="playerName" placeholder="Spielername (Enter)" maxlength="22">
+            <button class="btn" id="addPlayerBtn">+ Hinzufügen</button>
+            <button class="btn ghost" id="removePlayerBtn">Spieler entfernen</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eingabe -->
+      <div class="card">
+        <div class="head">
+          <h2>Spiel</h2>
+          <span id="turnInfo">–</span>
+        </div>
+
+        <div class="panel">
+          <div class="status">
+            <div class="row">
+              <div style="font-weight:950;">
+                Aktiver Spieler: <span id="activeName">–</span>
+              </div>
+              <div class="badge" title="R zählt als 0, erhöht aber den Shot-Zähler">
+                <img src="img/shot-img.png">
+                <span>R: <span id="activeR">0</span></span>
+              </div>
+            </div>
+
+            <div class="turn">
+              <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+                <div style="font-weight:900;opacity:.9">Aktuelle Würfe</div>
+                <div style="font-weight:900;opacity:.9">
+                  Rest: <span id="activeRemain">–</span>
+                </div>
+              </div>
+              <div class="darts" id="darts"></div>
+              <div class="hint" id="checkoutHint" style="display:none;"></div>
+            </div>
+
+            <!-- NUR Double/Triple -->
+            <div class="multis">
+              <button class="mBtn" id="doubleBtn">Double</button>
+              <button class="mBtn" id="tripleBtn">Triple</button>
+            </div>
+          </div>
+
+          <div class="keypad" id="keypad"></div>
+
+          <div class="footerActions">
+            <button class="btn ghost" id="undoBtn">Wurf Rückgängig</button>
+            <button class="btn warn" id="nextBtn">Nächster Spieler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
