@@ -155,7 +155,6 @@
       opts.push({ label: `T${n}`, points: n * 3, isDouble: false, isTriple: true });
     }
     
-
     // Größte Punkte zuerst (macht Suche “schöner”)
     opts.sort((a, b) => b.points - a.points);
     return opts;
