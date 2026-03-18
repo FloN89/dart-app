@@ -35,6 +35,7 @@ Eine kleine **Vanilla-JS Web-App** zum Zählen von Steeldart-Spielen (z.B. 301/5
 ├─ index.html
 ├─ style.css
 ├─ script.js
+├─ README.md
 └─ img/
    ├─ background-img.png
    └─ shot-img.png

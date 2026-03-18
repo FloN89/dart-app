@@ -353,8 +353,17 @@
           return;
         }
 
-        const mult = state.multiplier;
-        const m = multiplierLabel(mult, k);
+        let mult = state.multiplier;
+
+      // 👉 Für 25 nur Single oder Double erlauben
+      if (k === 25) {
+        if (mult === 3) {
+          toast("Triple 25 ist nicht erlaubt.");
+          return;
+        }
+      }
+
+const m = multiplierLabel(mult, k);
 
         applyDart({
           label: m.label,
